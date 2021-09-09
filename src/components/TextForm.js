@@ -50,7 +50,7 @@ export default function TextForm(props) {
           rows="9"
           placeholder="Enter text here"
         ></textarea>
-        <button className="btn btn-primary mx-2 my-1" onClick={ConvertToUp}>
+        <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={ConvertToUp}>
           ChangeToUpperCase
         </button>
         <button className="btn btn-primary mx-2 my-1" onClick={ConvertToLo}>
