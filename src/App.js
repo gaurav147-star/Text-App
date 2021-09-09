@@ -16,6 +16,9 @@ const showAlert=(message,type)=>{
     msg:message,
     type:type
   })
+  setTimeout(()=>{
+    setAlert(null);
+  },1500)
 }
 
 const toggleMode = () =>{
@@ -32,7 +35,6 @@ const toggleMode = () =>{
   }
 }
 
-  
   return (
     <>
       <Navbar title="TextApp" mode={mode} toggleMode={toggleMode}/>
