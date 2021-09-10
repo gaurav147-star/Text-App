@@ -33,6 +33,7 @@ export default function TextForm(props) {
 
   return (
     <>
+    <div className=" mx-3 my-3 border border-primary border-2 rounded" style={{ color: props.mode === "black" ? "white" : "black" }}>
       <div
         className="container my-3"
         style={{ color: props.mode === "light" ? "black" : "white" }}
@@ -53,18 +54,18 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={ConvertToUp}>
           ChangeToUpperCase
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={ConvertToLo}>
+        <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={ConvertToLo}>
           ChangeToLowerCase
         </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={Clear}>
+        <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={Clear}>
           Clear
         </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={CopyText}>
+        <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={CopyText}>
           Copy Text
         </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpace}>
+        <button className="btn btn-primary mx-2 my-1 shadow p-2 rounded" onClick={ExtraSpace}>
           Remove Extra Space
         </button>
       </div>
@@ -85,7 +86,7 @@ export default function TextForm(props) {
         </h2>
         <p>
           {" "}
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
         <p> {0.08 * text.split(" ").length} minutes read</p>
 
@@ -93,6 +94,7 @@ export default function TextForm(props) {
           <b> Preview</b>{" "}
         </h3>
         <p>{text}</p>
+      </div>
       </div>
     </>
   );
