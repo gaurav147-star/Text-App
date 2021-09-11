@@ -33,7 +33,6 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className=" mx-3 my-3 border border-primary border-2 rounded" style={{ color: props.mode === "black" ? "white" : "black" }}>
       <div
         className="container my-3"
         style={{ color: props.mode === "light" ? "black" : "white" }}
@@ -43,7 +42,7 @@ export default function TextForm(props) {
           className="form-control my-3"
           id="box"
           style={{
-            backgroundColor: props.mode === "light" ? "white" : "gray",
+            backgroundColor: props.mode === "light" ? "white" : "#8080805e",
             color: props.mode === "light" ? "black" : "white",
           }}
           onChange={handleOnChange}
@@ -86,7 +85,7 @@ export default function TextForm(props) {
         </h2>
         <p>
           {" "}
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
         <p> {0.08 * text.split(" ").length} minutes read</p>
 
@@ -95,7 +94,7 @@ export default function TextForm(props) {
         </h3>
         <p>{text}</p>
       </div>
-      </div>
+      
     </>
   );
 }
